@@ -294,7 +294,7 @@ class AlexaMediaFlowHandler(config_entries.ConfigFlow):
                     self.login.email = self.config.get(CONF_EMAIL)
                 if self.config.get(CONF_PASSWORD):
                     self.login.password = self.config.get(CONF_PASSWORD)
-                if self.config.get():
+                if self.config.get(CONF_OTPSECRET):
                     self.login.set_totp(self.config.get(CONF_OTPSECRET))
         except AlexapyPyotpInvalidKey:
             return self.async_show_form(
